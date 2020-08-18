@@ -17,6 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/posts/{id}/{name}/{pw}', 'PostsController@show');
+
+Route::resource('posts', 'PostsController');
 
 Auth::routes();
 
